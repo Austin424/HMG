@@ -1,0 +1,18 @@
+{
+    "user-table": [
+        {
+            "id":"",
+            "name":"a",
+            "email":"a@a.com",
+            "pasword":"a",
+            "profile-picture":""
+        },
+        {
+            "id":"",
+            "name":"Austin",
+            "email": "austin.rivera.24@aol.com",
+            "pasword":"b",
+            "profile-picture":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp2796440.jpg&f=1&nofb=1&ipt=388a3fa74b8aff1314c8e9ccf428b67cd6cdc3fc9ae3472d1cd691108d75c5c0&ipo=images"
+        }
+    ]
+}

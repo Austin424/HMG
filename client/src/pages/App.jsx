@@ -1,10 +1,12 @@
-import './app.css'
+import Navbar from '../components/Navbar'
+
 
 function App() {
 
   return (
     <>
-      <h1>Hello World</h1>
+      <Navbar/>
+      <div style={{backgroundColor:"black"} }></div>
     </>
   )
 }

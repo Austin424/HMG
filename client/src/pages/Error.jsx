@@ -1,4 +1,3 @@
-import './error.css'
 
 function Error() {
 
@@ -9,4 +8,4 @@ function Error() {
     )
 }
 
-export default Error
+export default Error;
