@@ -19,6 +19,7 @@ class User(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False, unique=True)
+    location = db.Column(db.String)
     password = db.Column(db.String, nullable=False)
     profile_pic = db.Column(db.String)
     
@@ -28,8 +29,8 @@ class Platform(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     
-class Games(db.Model, SerializerMixin):
-    __tablename__= "games"
+class Game(db.Model, SerializerMixin):
+    __tablename__= "game"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     developer = db.Column(db.String, nullable=False)
@@ -38,12 +39,13 @@ class Games(db.Model, SerializerMixin):
     
 class GamePlatform(db.Model, SerializerMixin):
     __tablename__= "game_platform"
-    id = db.Column(db.String, nullable=False)
+    id = db.Column(db.String, primary_key=True)
     game_id = db.Column(db.String, db.ForeignKey("game.id"))
     platform_id = db.Column(db.String, db.ForeignKey("platform.id"))
+    serialize_rules = ["-game.gameplatform"]
     
 class GameProfile(db.Model, SerializerMixin):
     __tablename__= "game_profile"
     id = db.Column(db.Integer, primary_key=True)
     game_id = db.Column(db.String, db.ForeignKey("game.id"))
-    user_id = db.Column(db.String, db.ForeignKey("uder.id"))
+    user_id = db.Column(db.String, db.ForeignKey("user.id"))
