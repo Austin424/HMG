@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar'
+import { Outlet } from 'react-router-dom'
 
 
 function App() {
@@ -6,7 +7,8 @@ function App() {
   return (
     <>
       <Navbar/>
-      <div style={{backgroundColor:"black"} }></div>
+      <Outlet/>
+      <div style={{backgroundColor:"black", border:"1px"} }></div>
     </>
   )
 }
