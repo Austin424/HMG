@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import { GiTreeBeehive, GiBee } from 'react-icons/gi';
-import { CgGames } from 'react-icons/cg';
+import { GiTreeBeehive, GiBeehive, GiHoneycomb  } from 'react-icons/gi';
+import {CgBee } from 'react-icons/cg';
 
 function Navbar() {
     return (
@@ -12,13 +12,18 @@ function Navbar() {
                     <NavLink to="/">Home</NavLink>
                 </li>
                 <li style={{ marginRight: "50px", fontSize: "30px", display: "flex", alignItems: "center" }}>
-                    <CgGames style={{ marginRight: "5px" }} />
-                    <NavLink to="">Games</NavLink>
+                    <CgBee style={{ marginRight: "5px" }} />
+                    <NavLink to="profile">Profile</NavLink>
                 </li>
                 <li style={{ marginRight: "50px", fontSize: "30px", display: "flex", alignItems: "center" }}>
-                    <GiBee style={{ marginRight: "5px" }} />
-                    <NavLink to="">Teams</NavLink>
+                    <GiHoneycomb style={{ marginRight: "5px" }} />
+                    <NavLink to="games">Games</NavLink>
                 </li>
+                <li style={{ marginRight: "50px", fontSize: "30px", display: "flex", alignItems: "center" }}>
+                    <GiBeehive style={{ marginRight: "5px" }} />
+                    <NavLink to="teams">Teams</NavLink>
+                </li>
+                
             </ul>
         </nav>
         <button style={{clipPath:"polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",backgroundColor:"yellow",color:"black", height:"100px", width:"100px", marginLeft: "auto"}}>Sign Up</button>

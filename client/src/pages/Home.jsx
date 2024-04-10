@@ -2,7 +2,7 @@ import Navbar from '../components/Navbar'
 import { Outlet } from 'react-router-dom'
 
 
-function App() {
+function Home() {
 
   return (
     <>
@@ -13,4 +13,4 @@ function App() {
   )
 }
 
-export default App
+export default Home

@@ -1,0 +1,61 @@
+{
+    "games": [
+        
+            {
+                "id": 1,
+                "title": "Overwatch 2",
+                "boxArt": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.mobygames.com%2Fcovers%2F11037275-overwatch-2-xbox-one-front-cover.png&f=1&nofb=1&ipt=ea5124965d60b1be2344b2afe222776af97dea12e06a573c1e4b843ae276721d&ipo=images",
+                "developer": "Blizzard Entertainment",
+                "publisher": "Blizzard Entertainment",
+                "genre": ["First-person shooter", "Hero Shooter"]
+            },
+            {
+                "id": 2,
+                "tile": "Smite",
+                "boxArt": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.mobygames.com%2Fcovers%2F3671623-smite-battleground-of-the-gods-gold-bundle-xbox-one-front-cover.png&f=1&nofb=1&ipt=9e307e13963f9c538b6334f6ce654ce32cdc9598abfb06dd2a4102b9adbe9942&ipo=images",
+                "developer":"Titan Forge Games",
+                "publisher": "Hi-Rez Studios",
+                "genre": "MOBA"
+            },
+            {
+                "id":3,
+                "title": "Bloons TD 6",
+                "boxArt": "https://wallpapercave.com/wp/wp6025404.jpg",
+                "developer": "Ninja Kiwi",
+                "publisher": "Ninja Wiki",
+                "genre": "Tower Defense"
+            },
+            {
+                "id":4,
+                "title": "Helldivers 2",
+                "boxArt": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.gematsu.com%2Fwp-content%2Fuploads%2F2023%2F05%2FGame-Page-Box-Art_Helldivers-II-768x1152.jpg&f=1&nofb=1&ipt=9107c7070873f072ee02173ded9d10ed497333aa0a969519aa5e779daa060d61&ipo=images",
+                "developer": "Arrowhead Game Studios",
+                "publisher": "Sony Interactive Entertainment",
+                "genre": "Third-person shooter"   
+            },
+            {
+                "id":5,
+                "title":"Destiny 2",
+                "boxArt":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mobygames.com%2Fimages%2Fcovers%2Fl%2F433360-destiny-2-playstation-4-front-cover.jpg&f=1&nofb=1&ipt=d289ab6f54c6e0c828517e41e42c65fa96c72ee20f446b33c2713e05fafb0762&ipo=images",
+                "developer":"Bungie",
+                "publisher":"Activision",
+                "genre":["First-person shooter, Massive Multiplayer Onlin Game"]
+            },
+            {
+                "id":"6",
+                "title":"Apex Legends",
+                "boxArt": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mobygames.com%2Fimages%2Fcovers%2Fl%2F538006-apex-legends-xbox-one-front-cover.jpg&f=1&nofb=1&ipt=672b4505e9809fa5146d086393274044a1e70ec087600ad089900b5bc27173de&ipo=images",
+                "developer":"Respawn Entertainment",
+                "publisher":"Electronic Arts",
+                "genre": ["Battle royale, First-person hero shooter"]
+            },
+            {
+                "id":7,
+                "title":"Fallout 76",
+                "boxArt":"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fs.ecrater.com%2Fstores%2F408554%2F5bec32465db69_408554b.jpg&f=1&nofb=1&ipt=44f1bff1e8bf64bd342d06fc4effe380ecb4e06e8e4b083d2db032803210889a&ipo=images",
+                "developer":"Bethesda Game Studios",
+                "publisher":"Bethesda Softworks",
+                "genre": "Action role-playing"
+            }        
+    ]
+}
