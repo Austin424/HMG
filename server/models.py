@@ -50,3 +50,5 @@ class GameProfile(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     game_id = db.Column(db.String, db.ForeignKey("game.id"))
     user_id = db.Column(db.String, db.ForeignKey("user.id"))
+    user_name = db.Column(db.String, nullable=False)
+    
