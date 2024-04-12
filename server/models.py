@@ -31,6 +31,7 @@ class Platform(db.Model, SerializerMixin):
     
 class Game(db.Model, SerializerMixin):
     __tablename__= "game"
+    
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     box_art = db.Column(db.String, nullable=False)
