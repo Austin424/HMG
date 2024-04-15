@@ -24,17 +24,19 @@ db.init_app(app)
 def home():
     return jsonify({"message": "Welcome to the HiveMind"}), 200
 
+# GET Request Across All Data.
 @app.get("/api/games")
 def get_games():
-    # Following this route will lead us directly to all of the books in our table.
+    # Following this route will lead us directly to all of the games in our table.
     games = Game.query.all()
     print(games)
-    # So far we're only summonign the books as  Python objects. We still need to convert our book objects into dictionaries.
+    # So far we're only summonign the games as  Python objects. We still need to convert our games objects into dictionaries.
     game_dicts = []
     for g in games:
         game_dicts.append(g.to_dict())
     return game_dicts, 200
 
+# GET Request for Individual Data Point.
 @app.get("/api/games/<int:game_id>")
 def get_game_by_id(game_id):
     matching_game = Game.query.filter(Game.id == game_id).first()
@@ -43,7 +45,11 @@ def get_game_by_id(game_id):
         return make_response(jsonify({"error": f"Game ID `{game_id}` not found in database."}), 404)
     return matching_game.to_dict(), 200
 
+# POST Request to Add New Data Point to Database.
 
+# PATCH Request to Update Record(s) of Individual Data Point in Database.
+
+# DELETE Request to Delete Individual Data Point from Database.
 
 
 

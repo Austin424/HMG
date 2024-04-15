@@ -1,0 +1,29 @@
+{
+    "platform": [
+        {
+            "id": 1,
+            "console": "PC",
+            "logo":""
+        },
+        {
+            "id": 2,
+            "console": "Playstation 5",
+            "logo":""
+        },
+        {
+            "id": 3,
+            "console": "Xbox Series X|S",
+            "logo": ""
+        },
+        {
+            "id": 4,
+            "console": "Nintendo Switch",
+            "logo": ""
+        },
+        {
+            "id": 5,
+            "console": "Mobile",
+            "logo": ""
+        }
+    ]
+}

@@ -1,5 +1,5 @@
 from app import app
-from models import db, Game, User
+from models import db, Game, User, Platform
 from faker import Faker
 import json
 
@@ -10,6 +10,7 @@ if __name__ == "__main__":
           
           Game.query.delete()
           User.query.delete()
+          Platform.query.delete()
           
           data = {}
           
@@ -18,13 +19,15 @@ if __name__ == "__main__":
           for game in data["games"]:
                new_game = Game(
                     name=game["name"],
-                    box_art=game["boxArt"],
+                    box_art=game["boxart"],
                     developer=game["developer"],
                     publisher=game["publisher"],
                     genre=game["genre"]
                )
                db.session.add(new_game)
                db.session.commit()
+               
+          
           
           
           def seed_database():
@@ -35,6 +38,18 @@ if __name__ == "__main__":
                
                db.session.commit()
           seed_database()
+          
+          data = {}
+          
+          with open("platform.json") as f:
+               data = json.load(f)
+          for platform in data["platform"]:
+               new_platform = Platform(
+                    console=platform["console"],
+                    logo=platform["logo"]
+               )
+               db.session.add(new_platform)
+               db.session.commit()
 
 
 

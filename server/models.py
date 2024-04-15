@@ -27,7 +27,8 @@ class User(db.Model, SerializerMixin):
 class Platform(db.Model, SerializerMixin):
     __tablename__= "platform"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    console = db.Column(db.String, nullable=False)
+    logo = db.Column(db.String)
     
 class Game(db.Model, SerializerMixin):
     __tablename__= "game"
@@ -52,4 +53,5 @@ class GameProfile(db.Model, SerializerMixin):
     game_id = db.Column(db.String, db.ForeignKey("game.id"))
     user_id = db.Column(db.String, db.ForeignKey("user.id"))
     user_name = db.Column(db.String, nullable=False)
-    
+    level = db.Column(db.Integer)
+    rank = db.Column(db.String)

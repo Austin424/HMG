@@ -23,7 +23,10 @@ function Navbar() {
                     <GiBeehive style={{ marginRight: "5px" }} />
                     <NavLink to="teams">Teams</NavLink>
                 </li>
-                
+                <li style={{ marginRight: "50px", fontSize: "30px", display: "flex", alignItems: "center" }}>
+                    <GiBeehive style={{ marginRight: "5px" }} />
+                    <NavLink to="players">Other Players</NavLink>
+                </li>
             </ul>
         </nav>
         <button style={{clipPath:"polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",backgroundColor:"yellow",color:"black", height:"100px", width:"100px", marginLeft: "auto"}}>Sign Up</button>
