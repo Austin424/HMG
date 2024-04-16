@@ -4,7 +4,7 @@
             {
                 "id": 1,
                 "name": "Overwatch 2",
-                "boxart": "../client/public/box_art/Overwacth2.jpg",
+                "boxart": "/box_art/Overwacth2.jpg",
                 "developer": "Blizzard Entertainment",
                 "publisher": "Blizzard Entertainment",
                 "genre":"Hero Shooter"
@@ -12,7 +12,7 @@
             {
                 "id": 2,
                 "name": "Smite",
-                "boxart": "../client/public/box_art/Smite.png",
+                "boxart": "/box_art/Smite.png",
                 "developer":"Titan Forge Games",
                 "publisher": "Hi-Rez Studios",
                 "genre": "MOBA"
@@ -20,7 +20,7 @@
             {
                 "id":3,
                 "name": "Bloons TD 6",
-                "boxart": "../client/public/box_art/Bloons TD 6.webp",
+                "boxart": "/box_art/Bloons TD 6.webp",
                 "developer": "Ninja Kiwi",
                 "publisher": "Ninja Wiki",
                 "genre": "Tower Defense"
@@ -28,7 +28,7 @@
             {
                 "id":4,
                 "name": "Helldivers 2",
-                "boxart": "../client/public/boxArt/Helldivers2.jpg",
+                "boxart": "/box_art/Helldivers2.jpg",
                 "developer": "Arrowhead Game Studios",
                 "publisher": "Sony Interactive Entertainment",
                 "genre": "Third-person shooter"   
@@ -36,7 +36,7 @@
             {
                 "id":5,
                 "name":"Destiny 2",
-                "boxart":"../client/public/boxArt/Destiny2.jpg",
+                "boxart":"/box_art/Destiny2.jpg",
                 "developer":"Bungie",
                 "publisher":"Activision",
                 "genre":"First-person shooter"
@@ -44,7 +44,7 @@
             {
                 "id":"6",
                 "name":"Apex Legends",
-                "boxart": "../client/public/boxArt/ApexLegends.jpg",
+                "boxart": "/box_art/ApexLegends.jpg",
                 "developer":"Respawn Entertainment",
                 "publisher":"Electronic Arts",
                 "genre": "Battle royale"
@@ -52,7 +52,7 @@
             {
                 "id":7,
                 "name":"Fallout 76",
-                "boxart":"../client/public/boxArt/Fallout76.jpg",
+                "boxart":"/box_art/Fallout76.jpg",
                 "developer":"Bethesda Game Studios",
                 "publisher":"Bethesda Softworks",
                 "genre": "Action role-playing"

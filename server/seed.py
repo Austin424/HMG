@@ -1,25 +1,28 @@
 from app import app
-from models import db, Game, User, Platform
+from models import db, Game, User, Platform, GamePlatform, GameProfile
 from faker import Faker
 import json
-
+import random
 fake = Faker()
 
 if __name__ == "__main__":
+     
+     print(">> Seeding... starting...")
+
      with app.app_context():
           
           Game.query.delete()
           User.query.delete()
           Platform.query.delete()
           
-          data = {}
+          games = []
           
           with open("games.json") as f:
-               data = json.load(f)
-          for game in data["games"]:
+               games = json.load(f)
+          for game in games["games"]:
                new_game = Game(
                     name=game["name"],
-                    box_art=game["boxart"],
+                    boxart=game["boxart"],
                     developer=game["developer"],
                     publisher=game["publisher"],
                     genre=game["genre"]
@@ -32,25 +35,52 @@ if __name__ == "__main__":
           
           def seed_database():
                for i in range(10):
-                    user = User(name=fake.name(), email=fake.email(), profile_pic=fake.image_url(), location=fake.address(), password=fake.password())
+                    user = User(name=fake.name(), email=fake.email(),handle=fake.username(), profile_pic=fake.image_url(), location=fake.address(), password=fake.password())
                     db.session.add(user)
-               
-               
                db.session.commit()
           seed_database()
           
-          data = {}
+          platforms = []
           
           with open("platform.json") as f:
-               data = json.load(f)
-          for platform in data["platform"]:
+               platforms = json.load(f)
+          for platform in platforms["platform"]:
                new_platform = Platform(
                     console=platform["console"],
                     logo=platform["logo"]
                )
                db.session.add(new_platform)
                db.session.commit()
+          
+          
+          
+          game_platform = []
+          
+          for _ in range(21):
+               game_platform = GamePlatform(
+                    game_id = random.randint(1, len(games["games"])),
+                    platform_id = random.randint(1, len(platforms["platform"]))
+               )
+               db.session.add(game_platform)
+          db.session.commit()
+          
+          game_profile = []
+          
+          for _ in range(10):
+               game_profile = GameProfile(
+                    game_id = random.randint(1, len(games["games"])),
+                    user_id = random.randint(1,10)
+               )
+               db.session.add(game_profile)
+          db.session.commit()
+          
+          
+          
+               
+               
 
+
+          print(">> Seeding... done.")
 
 
 

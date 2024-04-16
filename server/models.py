@@ -16,42 +16,63 @@ db = SQLAlchemy(metadata=metadata)
 
 class User(db.Model, SerializerMixin):
     __tablename__= "user"
+    serialize_rules = ['-game_profiles.user']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
+    handle = db.Column(db.String, nullable=False)
     email = db.Column(db.String, nullable=False, unique=True)
     location = db.Column(db.String)
     password = db.Column(db.String, nullable=False)
     profile_pic = db.Column(db.String)
     
 
+    
+    
+
 class Platform(db.Model, SerializerMixin):
     __tablename__= "platform"
+    serialize_rules = ['-game_platforms.platform']
     id = db.Column(db.Integer, primary_key=True)
     console = db.Column(db.String, nullable=False)
     logo = db.Column(db.String)
     
+    game_platforms = db.relationship("GamePlatform", back_populates="platform")
+    
 class Game(db.Model, SerializerMixin):
     __tablename__= "game"
-    
+    serialize_rules = ['-game_platforms.game']
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
-    box_art = db.Column(db.String, nullable=False)
+    boxart = db.Column(db.String, nullable=False)
     developer = db.Column(db.String, nullable=False)
     publisher = db.Column(db.String, nullable=False)
     genre = db.Column(db.String, nullable=False)
     
+    game_platforms = db.relationship('GamePlatform', back_populates="game")
+    
+class Table(db.Model, SerializerMixin):
+    __tablename__ = "team_finder"
+    id = db.Column(db.Integer, primary_key=True)
+    game_id = db.Column(db.Integer, db.ForeignKey("game.id"))
+    creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    role = db.Column(db.String)
+    open_spots = db.Column(db.Integer)
+
+    
 class GamePlatform(db.Model, SerializerMixin):
     __tablename__= "game_platform"
-    id = db.Column(db.String, primary_key=True)
-    game_id = db.Column(db.String, db.ForeignKey("game.id"))
-    platform_id = db.Column(db.String, db.ForeignKey("platform.id"))
-    serialize_rules = ["-game.gameplatform"]
+    serialize_rules = ['-game.game_platforms',   '-platform.game_platforms'] 
+    id = db.Column(db.Integer, primary_key=True)
+    game_id = db.Column(db.Integer, db.ForeignKey("game.id"))
+    platform_id = db.Column(db.Integer, db.ForeignKey("platform.id"))
+
+    
+    game = db.relationship("Game", back_populates="game_platforms")
+    platform = db.relationship("Platform", back_populates="game_platforms")
     
 class GameProfile(db.Model, SerializerMixin):
     __tablename__= "game_profile"
     id = db.Column(db.Integer, primary_key=True)
-    game_id = db.Column(db.String, db.ForeignKey("game.id"))
-    user_id = db.Column(db.String, db.ForeignKey("user.id"))
-    user_name = db.Column(db.String, nullable=False)
-    level = db.Column(db.Integer)
-    rank = db.Column(db.String)
+    game_id = db.Column(db.Integer, db.ForeignKey("game.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+
