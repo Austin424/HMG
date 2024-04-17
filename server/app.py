@@ -20,6 +20,11 @@ migrate = Migrate(app, db)
 db.init_app(app)
 
 
+
+
+
+
+
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({"message": "Welcome to the HiveMind"}), 200
@@ -35,6 +40,20 @@ def get_games():
     for g in games:
         game_dicts.append(g.to_dict())
     return game_dicts, 200
+
+@app.get("/api/team_posts")
+def get_team_posts():
+    # Query all team posts from the database
+    team_posts = Team.query.all()
+
+    # Convert team post objects into dictionaries
+    team_posts_dicts = []
+    for tp in team_posts:
+        team_posts_dicts.append(tp.to_dict())
+
+    # Return the team posts as JSON with status code 200
+    return jsonify(team_posts_dicts), 200
+
 
 # GET Request for Individual Data Point.
 @app.get("/api/games/<int:game_id>")

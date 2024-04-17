@@ -57,6 +57,7 @@ class Team(db.Model, SerializerMixin):
     creator_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     role = db.Column(db.String)
     open_spots = db.Column(db.Integer)
+    
 
     
 class GamePlatform(db.Model, SerializerMixin):
