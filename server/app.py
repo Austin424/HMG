@@ -2,7 +2,7 @@
 from flask import Flask, make_response, jsonify, request, session, g
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from models import db, User, Platform, GamePlatform, Game, GameProfile
+from models import db, User, Platform, GamePlatform, Game, GameProfile, Team
 import json
 
 # from flask_cors import CORS
@@ -46,6 +46,20 @@ def get_game_by_id(game_id):
     return matching_game.to_dict(), 200
 
 # POST Request to Add New Data Point to Database.
+
+@app.route("/api/team_posts", methods=["POST"])
+def add_team_post():
+    data = request.get_json()
+    
+    team_post = Team(
+    game_id = data.get('game_id'),
+    creator_id = data.get('creator_id'),
+    role = data.get('role'),
+    open_spots = data.get('open_spots')
+    )
+    db.session.add(team_post)
+    db.session.commit()
+    return jsonify(team_post.to_dict()), 201
 
 # PATCH Request to Update Record(s) of Individual Data Point in Database.
 

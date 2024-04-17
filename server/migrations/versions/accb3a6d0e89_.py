@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: d7be526f1161
+Revision ID: accb3a6d0e89
 Revises: 
-Create Date: 2024-04-16 10:56:24.666305
+Create Date: 2024-04-17 09:33:48.883744
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'd7be526f1161'
+revision = 'accb3a6d0e89'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -36,6 +36,7 @@ def upgrade():
     op.create_table('user',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(), nullable=False),
+    sa.Column('handle', sa.String(), nullable=False),
     sa.Column('email', sa.String(), nullable=False),
     sa.Column('location', sa.String(), nullable=True),
     sa.Column('password', sa.String(), nullable=False),
@@ -62,8 +63,10 @@ def upgrade():
     op.create_table('team_finder',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('game_id', sa.Integer(), nullable=True),
+    sa.Column('creator_id', sa.Integer(), nullable=True),
     sa.Column('role', sa.String(), nullable=True),
     sa.Column('open_spots', sa.Integer(), nullable=True),
+    sa.ForeignKeyConstraint(['creator_id'], ['user.id'], name=op.f('fk_team_finder_creator_id_user')),
     sa.ForeignKeyConstraint(['game_id'], ['game.id'], name=op.f('fk_team_finder_game_id_game')),
     sa.PrimaryKeyConstraint('id')
     )

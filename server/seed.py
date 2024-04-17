@@ -33,13 +33,11 @@ if __name__ == "__main__":
           
           
           
-          def seed_database():
-               for i in range(10):
-                    user = User(name=fake.name(), email=fake.email(),handle=fake.username(), profile_pic=fake.image_url(), location=fake.address(), password=fake.password())
-                    db.session.add(user)
-               db.session.commit()
-          seed_database()
-          
+
+          for i in range(10):
+               user = User(name=fake.name(), email=fake.email(),handle=fake.sentence().split(' ')[0], profile_pic=fake.image_url(), location=fake.address(), password=fake.password())
+               db.session.add(user)
+          db.session.commit()          
           platforms = []
           
           with open("platform.json") as f:

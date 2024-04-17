@@ -50,7 +50,7 @@ class Game(db.Model, SerializerMixin):
     
     game_platforms = db.relationship('GamePlatform', back_populates="game")
     
-class Table(db.Model, SerializerMixin):
+class Team(db.Model, SerializerMixin):
     __tablename__ = "team_finder"
     id = db.Column(db.Integer, primary_key=True)
     game_id = db.Column(db.Integer, db.ForeignKey("game.id"))
